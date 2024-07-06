@@ -202,7 +202,36 @@ print(f"I've been to {travel_log[-1]['country']} {travel_log[-1]['visits']} time
 print(f"My favourite city was {travel_log[-1]['cities'][0]}.")
 
 
+####################################################################
+####################################################################
 
+from replit import clear
+# Initialize the bidding dictionary
+bidding = {}
+# Function to add a bid to the dictionary
+still_Bidding = True
+# Main loop for the bidding process
+while still_Bidding:
+    nameInput = input("What is your name? ")
+    bidInput = int(input("What is your bid? $"))  # Convert bid input to integer
+    bidding[nameInput] = bidInput  # Add the bid to the dictionary
+    more_bids = input("Are there any other bidders? Type 'yes' or 'no'. ")
+    if more_bids == "no":
+        still_Bidding = False
+        break
+    elif more_bids == "yes":
+        clear()
+        
+def add_bid(bidding_dictionary):
+    for bid in bidding_dictionary:
+        bid_amount = bidding_dictionary[bid]
+        highest_bid = 0
+        if bid_amount > highest_bid:
+            highest_bid = bid_amount
+            winner = bid
+    print(f"The winner is {winner} with a bid of ${highest_bid}")
+    
+add_bid(bidding)
 
     
 
